@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: ${{values.project_name}}
+  namespace: ${{values.project_k8_namespace}}
+spec:
+  interval: 1m0s
+  ref:
+    branch: ${{values.repo_branch}}
+  url: https://github.com/${{values.project_org}}/${{values.project_name}}
