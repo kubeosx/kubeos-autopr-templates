@@ -4,6 +4,14 @@ path "kubeos/${{values.project_k8_namespace}}/${{values.project_name_in_k8}}"
 {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
+path "kubeos/dev/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+path "kubeos/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
 EOH
 
 
