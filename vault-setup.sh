@@ -20,3 +20,5 @@ vault write auth/kubernetes/role/${{values.project_name_in_k8}} \
         bound_service_account_namespaces=${{values.project_k8_namespace}} \
         policies=${{values.project_name_in_k8}}-policy \
         ttl=72h
+
+vault kv put kubeos/dev/${{values.project_name_in_k8}} name=${{values.project_name_in_k8}}
